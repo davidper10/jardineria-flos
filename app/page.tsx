@@ -70,7 +70,7 @@ export default function HomePage() {
             >
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
 
-              Ingeniería Agronómica & Paisajismo Integral
+              Ingeniería Agronóma & Paisajismo Integral
             </div>
 
             <h1
@@ -98,9 +98,8 @@ export default function HomePage() {
             </h1>
 
             <p className="text-lg leading-relaxed text-stone-300 sm:text-xl">
-              Proyectos llave en mano de jardinería, sistemas de riego
-              automatizado, piscinas integradas y soluciones técnicas de
-              ingeniería agronómica.
+              Proyectos de jardinería, sistemas de riego automatizado, piscinas 
+              integradas y soluciones técnicas de ingeniería agronóma.
             </p>
 
             <div className="flex flex-col gap-4 pt-4 sm:flex-row">
@@ -162,9 +161,10 @@ export default function HomePage() {
               </div>
 
               <div>
-                <strong className="block text-2xl text-white">-40%</strong>
+                <strong className="block text-2xl text-white">+50
+                </strong>
                 <span className="text-xs text-stone-400">
-                  Consumo de agua óptimo
+                  Proyectos satisfactorios
                 </span>
               </div>
             </div>
