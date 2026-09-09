@@ -26,22 +26,23 @@ export default function ServiceCard({
       "
     >
       <div>
-        <div
-          className="
-            mb-6
-            flex h-14 w-14
-            items-center justify-center
-            rounded-2xl
-            bg-emerald-50
-            text-2xl
-          "
-        >
-          {service.icon}
-        </div>
+        <div className="mb-4 flex items-center gap-4">
+          <div
+            className="
+              flex h-14 w-14 shrink-0
+              items-center justify-center
+              rounded-2xl
+              bg-emerald-50
+              text-2xl
+            "
+          >
+            {service.icon}
+          </div>
 
-        <h2 className="mb-3 text-xl font-bold text-stone-900">
-          {service.shortTitle}
-        </h2>
+          <h2 className="text-xl font-bold text-stone-900">
+            {service.shortTitle}
+          </h2>
+        </div>
 
         <p className="mb-6 text-sm leading-relaxed text-stone-600">
           {service.shortDescription}

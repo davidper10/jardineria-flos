@@ -31,8 +31,11 @@ export default function ContactForm() {
 
   const [files, setFiles] = useState<File[]>([]);
 
-  const [submitted, setSubmitted] =
-    useState(false);
+  const [status, setStatus] =
+    useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const [errorMessage, setErrorMessage] =
+    useState("");
 
   function handleServiceToggle(
     service: ContactService
@@ -63,21 +66,56 @@ export default function ContactForm() {
     setFiles(selectedFiles);
   }
 
-  function handleSubmit(
+  async function handleSubmit(
     event: FormEvent<HTMLFormElement>
   ) {
     event.preventDefault();
 
-    console.log({
-      ...formData,
-      files,
+    setStatus("sending");
+    setErrorMessage("");
+
+    const payload = new FormData();
+
+    payload.set("name", formData.name);
+    payload.set("phone", formData.phone);
+    payload.set("email", formData.email);
+    payload.set("location", formData.location);
+    payload.set("surface", String(formData.surface));
+    payload.set("message", formData.message);
+
+    formData.services.forEach((service) => {
+      payload.append("services", service);
     });
 
-    setSubmitted(true);
+    files.forEach((file) => {
+      payload.append("files", file);
+    });
 
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 4000);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: payload,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result.error ?? "No se pudo enviar la solicitud."
+        );
+      }
+
+      setStatus("success");
+      setFormData(initialFormData);
+      setFiles([]);
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "No se pudo enviar la solicitud."
+      );
+    }
   }
 
   return (
@@ -512,6 +550,7 @@ export default function ContactForm() {
 
         <button
           type="submit"
+          disabled={status === "sending"}
           className="
             w-full
             rounded-xl
@@ -523,17 +562,22 @@ export default function ContactForm() {
             transition
             hover:bg-[#204f3b]
             hover:shadow-lg
+            disabled:cursor-not-allowed
+            disabled:opacity-60
           "
         >
-          Preparar solicitud
+          {status === "sending"
+            ? "Enviando solicitud..."
+            : "Enviar solicitud"}
         </button>
 
         <p className="text-center text-xs text-stone-400">
-          El envío real se conectará en una fase posterior.
+          Recibirás confirmación por email. Adjuntaremos un PDF con tu
+          solicitud a nuestro equipo.
         </p>
       </form>
 
-      {submitted && (
+      {status === "success" && (
         <div
           className="
             mt-6
@@ -548,7 +592,27 @@ export default function ContactForm() {
             text-emerald-800
           "
         >
-          ✓ Los datos del formulario se han validado correctamente.
+          ✓ Tu solicitud se ha enviado correctamente. Te contactaremos en
+          breve.
+        </div>
+      )}
+
+      {status === "error" && (
+        <div
+          className="
+            mt-6
+            rounded-xl
+            border
+            border-red-200
+            bg-red-50
+            px-5
+            py-4
+            text-sm
+            font-medium
+            text-red-700
+          "
+        >
+          ✕ {errorMessage}
         </div>
       )}
     </div>

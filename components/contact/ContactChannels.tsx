@@ -6,6 +6,37 @@ export default function ContactChannels() {
           rounded-3xl
           border border-stone-200
           bg-white
+          p-5
+          shadow-sm
+        "
+      >
+        <div className="flex items-center gap-4">
+          <img
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
+            alt="Jose Ángel Pérez-Sevilla"
+            className="h-16 w-16 rounded-full object-cover ring-4 ring-emerald-100"
+          />
+
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#256348]">
+              Atención personalizada
+            </p>
+            <h3 className="mt-1 text-lg font-bold text-stone-900">
+              Jose Ángel Pérez-Sevilla
+            </h3>
+          </div>
+        </div>
+
+        <p className="mt-4 text-sm leading-6 text-stone-600">
+          Ingeniero agrónomo con amplia experiencia en diseño y gestión de proyectos de jardinería.
+        </p>
+      </div>
+
+      <div
+        className="
+          rounded-3xl
+          border border-stone-200
+          bg-white
           p-8
           shadow-sm
         "
@@ -178,8 +209,7 @@ export default function ContactChannels() {
           "
         >
           Proyectos presenciales en La Rioja y zonas próximas. Consultoría y
-          determinados proyectos técnicos pueden
-          estudiarse también a distancia.
+          determinados proyectos técnicos pueden estudiarse también a distancia.
         </p>
       </div>
     </aside>

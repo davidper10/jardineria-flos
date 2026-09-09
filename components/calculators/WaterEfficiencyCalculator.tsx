@@ -6,14 +6,14 @@ import { useState } from "react";
 export default function WaterEfficiencyCalculator() {
   const [area, setArea] = useState(300);
 
-  const litersSaved = Math.round(area * 360);
+  const litersSaved = Math.round(area * 20);
 
   const minEuro = Math.round(
-    litersSaved * 0.004
+    litersSaved * 0.75
   );
 
   const maxEuro = Math.round(
-    litersSaved * 0.0065
+    litersSaved * 1.5
   );
 
   return (
@@ -65,7 +65,7 @@ export default function WaterEfficiencyCalculator() {
               sm:text-3xl
             "
           >
-            Estimador de eficiencia hídrica
+            Presupuesto orientativo
           </h2>
 
           <p
@@ -76,10 +76,10 @@ export default function WaterEfficiencyCalculator() {
               text-stone-300
             "
           >
-            Utiliza la superficie aproximada de tu
-            jardín para obtener una estimación
-            orientativa del potencial de ahorro
-            mediante un sistema de riego eficiente.
+            Utiliza la superficie aproximada de tu jardín para obtener una estimación
+            orientativa del presupuesto medio. Luego hay muchos factores que pueden influir 
+            en el coste final. Para obtener un presupuesto preciso que se adapte a tus necesidades, 
+            te recomendamos solicitar una consulta personalizada.
           </p>
 
           <div className="mt-8">
@@ -157,7 +157,7 @@ export default function WaterEfficiencyCalculator() {
               text-stone-400
             "
           >
-            Ahorro anual estimado
+            Precio estimado
           </p>
 
           <p
@@ -169,12 +169,9 @@ export default function WaterEfficiencyCalculator() {
               sm:text-5xl
             "
           >
-            {litersSaved.toLocaleString("es-ES")}
+            {litersSaved.toLocaleString("es-ES")} €
           </p>
 
-          <p className="font-semibold text-white">
-            litros de agua
-          </p>
 
           <p className="mt-5 text-sm text-stone-300">
             Estimación económica aproximada:
@@ -208,7 +205,7 @@ export default function WaterEfficiencyCalculator() {
                 hover:bg-emerald-500
               "
             >
-              Consultar sistema de riego
+              Consultar presupuesto
             </Link>
           </div>
         </div>

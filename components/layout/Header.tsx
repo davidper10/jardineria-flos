@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -40,15 +41,19 @@ export default function Header() {
               className="
                 flex h-11 w-11
                 items-center justify-center
-                rounded-xl
-                bg-[#256348]
-                text-xl text-white
-                shadow-md
-                transition-colors
-                group-hover:bg-[#2d7c58]
+                rounded-full
+                border-2 border-white
+                shadow-[0_0_10px_2px_rgba(255,255,255,0.85)]
               "
             >
-              🌿
+              <Image
+                src="/logo_ja.png"
+                alt="Jardinería Flos"
+                width={44}
+                height={44}
+                className="h-full w-full object-contain"
+                priority
+              />
             </div>
 
             <div>
@@ -62,7 +67,7 @@ export default function Header() {
                   group-hover:text-[#256348]
                 "
               >
-                JARDINERÍA FLOS
+                JOSE ÁNGEL
               </span>
 
               <span

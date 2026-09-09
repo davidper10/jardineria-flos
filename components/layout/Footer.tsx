@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const navigation = [
@@ -39,16 +40,22 @@ export default function Footer() {
                 className="
                   flex h-9 w-9
                   items-center justify-center
-                  rounded-lg
-                  bg-[#256348]
-                  text-white
+                  rounded-full
+                  border-2 border-white
+                  shadow-[0_0_10px_2px_rgba(255,255,255,0.85)]
                 "
               >
-                🌿
+                <Image
+                  src="/logo_ja.png"
+                  alt="Jardinería Flos"
+                  width={36}
+                  height={36}
+                  className="h-full w-full object-contain"
+                />
               </div>
 
               <span className="text-xl font-bold tracking-tight text-white">
-                JARDINERÍA FLOS
+                Jose Ángel Pérez-Sevilla
               </span>
             </div>
 
@@ -115,7 +122,7 @@ export default function Footer() {
           "
         >
           <p>
-            © {new Date().getFullYear()} VERDIA Paisajismo & Agronomía.
+            © {new Date().getFullYear()} JOSE ÁNGEL Paisajismo & Agronomía.
             Todos los derechos reservados.
           </p>
 
