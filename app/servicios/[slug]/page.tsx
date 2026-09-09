@@ -92,20 +92,22 @@ export default async function ServicePage({
               ← Todos los servicios
             </Link>
 
-            <div className="mb-5 text-4xl">
-              {service.icon}
-            </div>
+            <div className="mb-5 flex items-center gap-4">
+              <span className="text-4xl">
+                {service.icon}
+              </span>
 
-            <h1
-              className="
-                text-4xl
-                font-extrabold
-                tracking-tight
-                sm:text-5xl
-              "
-            >
-              {service.title}
-            </h1>
+              <h1
+                className="
+                  text-4xl
+                  font-extrabold
+                  tracking-tight
+                  sm:text-5xl
+                "
+              >
+                {service.title}
+              </h1>
+            </div>
 
             <p className="mt-5 text-xl text-stone-300">
               {service.subtitle}
