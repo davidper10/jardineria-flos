@@ -73,9 +73,11 @@ export default function ServicesPage() {
 
           <ServicesGrid />
 
+          {/*
           <div className="mt-20">
             <WaterEfficiencyCalculator />
           </div>
+          */}
         </div>
       </section>
     </>

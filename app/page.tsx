@@ -164,7 +164,7 @@ export default function HomePage() {
                 <strong className="block text-2xl text-white">+50
                 </strong>
                 <span className="text-xs text-stone-400">
-                  Proyectos satisfactorios
+                  Clientes satisfactorios
                 </span>
               </div>
             </div>
