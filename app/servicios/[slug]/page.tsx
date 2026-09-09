@@ -84,7 +84,7 @@ export default async function ServicePage({
             lg:py-32
           "
         >
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <Link
               href="/servicios"
               className="mb-6 inline-block text-sm text-emerald-300 hover:text-white"
@@ -196,7 +196,7 @@ export default async function ServicePage({
         </div>
       </section>
 
-      {service.slug === "sistemas-riego" && (
+      {/*service.slug === "sistemas-riego" && (
         <section className="bg-stone-50 py-20">
           <div
             className="
@@ -210,7 +210,7 @@ export default async function ServicePage({
             <WaterEfficiencyCalculator />
           </div>
         </section>
-      )}
+      )*/}
 
       {/* CTA */}
       <section className="bg-[#1c4232] py-16 text-white">
