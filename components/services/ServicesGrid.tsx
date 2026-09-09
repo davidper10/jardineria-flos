@@ -4,12 +4,14 @@ import { services } from "@/data/services";
 
 export default function ServicesGrid() {
   return (
-    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div className="flex flex-wrap justify-center gap-8">
       {services.map((service) => (
-        <ServiceCard
+        <div
           key={service.slug}
-          service={service}
-        />
+          className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]"
+        >
+          <ServiceCard service={service} />
+        </div>
       ))}
     </div>
   );

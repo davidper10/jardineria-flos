@@ -37,14 +37,24 @@ export default function Header() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <Image
-              src="/logo_ja.png"
-              alt="Jardinería Flos"
-              width={44}
-              height={44}
-              className="h-11 w-11 object-contain"
-              priority
-            />
+            <div
+              className="
+                flex h-11 w-11
+                items-center justify-center
+                rounded-full
+                border-2 border-white
+                shadow-[0_0_10px_2px_rgba(255,255,255,0.85)]
+              "
+            >
+              <Image
+                src="/logo_ja.png"
+                alt="Jardinería Flos"
+                width={44}
+                height={44}
+                className="h-full w-full object-contain"
+                priority
+              />
+            </div>
 
             <div>
               <span
@@ -57,7 +67,7 @@ export default function Header() {
                   group-hover:text-[#256348]
                 "
               >
-                JARDINERÍA FLOS
+                JOSE ÁNGEL
               </span>
 
               <span
