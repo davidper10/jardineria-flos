@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -36,20 +37,14 @@ export default function Header() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div
-              className="
-                flex h-11 w-11
-                items-center justify-center
-                rounded-xl
-                bg-[#256348]
-                text-xl text-white
-                shadow-md
-                transition-colors
-                group-hover:bg-[#2d7c58]
-              "
-            >
-              🌿
-            </div>
+            <Image
+              src="/logo_ja.png"
+              alt="Jardinería Flos"
+              width={44}
+              height={44}
+              className="h-11 w-11 object-contain"
+              priority
+            />
 
             <div>
               <span
