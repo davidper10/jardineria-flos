@@ -104,6 +104,7 @@ export default async function ProjectPage({
           </Link>
 
           <div className="mt-8 max-w-3xl">
+            {/*
             <span
               className="
                 text-sm
@@ -117,6 +118,7 @@ export default async function ProjectPage({
               {" · "}
               {project.area}
             </span>
+            */}
 
             <h1
               className="
